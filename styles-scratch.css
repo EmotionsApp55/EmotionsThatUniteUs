@@ -1,0 +1,268 @@
+/* ====== ESTILOS GENERALES ====== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f8;
+    color: #333;
+}
+/* ====== HEADER SENCILLO ====== */
+.header-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #ffca28;
+    padding: 25px;
+    color: #4a2c2a;
+    border-bottom: 4px solid #c62828;
+}
+
+/* TEXTO DEL HEADER */
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.header-text p {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+/* LOGO DEL HEADER */
+.logo-header {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+    border: 4px solid #ffc107;
+    padding: 4px;
+    background: white;
+
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+/* EFECTO HOVER EN EL LOGO */
+.logo-header:hover {
+    transform: scale(1.08);
+    border-color: #8b0000; /* guinda */
+}
+/* ====== MENÚ FIJO (STICKY) ====== */
+
+nav.menu {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;               /* 🔥 antes estaba GRID, ahora FLEX */
+    justify-content: space-around; /* 🔥 para colocar todo en una fila */
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px;
+    background: #ffe082;
+    border-bottom: 4px solid #c62828;
+
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+    animation: fadeSlide .5s ease-out;
+}
+
+/* ====== ANIMACIÓN DE ENTRADA ====== */
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== BOTONES DEL MENÚ ====== */
+
+
+.item {
+    background: white;
+    padding: 10px 14px;   /* 🔥 Más pequeño */
+    text-align: center;
+    border-radius: 10px;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    transition: 
+        transform .25s ease-in-out,
+        background .25s,
+        box-shadow .25s,
+        rotate .25s;
+}
+
+.item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;    /* 🔥 Tamaño reducido */
+    font-weight: bold;
+}
+
+/* ====== EFECTO HOVER ANIMADO ====== */
+
+@keyframes bounceLite {
+    0%   { transform: scale(1); }
+    35%  { transform: scale(1.08); }
+    100% { transform: scale(1.05); }
+}
+
+.item:hover {
+    animation: bounceLite .3s forwards;
+    background: #ffb74d;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    rotate: 1.5deg;
+}
+/* ===== TÍTULO ===== */
+.titulo-section {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 30px;
+    color: #800020;
+}
+
+/* ===== INTRODUCCIÓN ===== */
+/* ===== CONTENEDOR DE INTRO + LOGO ===== */
+
+.intro-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: #fff8e1;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 6px solid #c62828;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+
+    max-width: 1100px;
+    margin: 25px auto;
+}
+
+/* Texto */
+.intro {
+    width: 70%;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Imagen del logo */
+.logo-scratch {
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+
+    border-radius: 12px;
+    padding: 5px;
+    background: white;
+    border: 3px solid #ffca28;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+
+    transition: transform .25s ease;
+}
+
+/* Efecto hover */
+.logo-scratch:hover {
+    transform: scale(1.07);
+}
+
+/* Adaptación móvil */
+@media (max-width: 800px) {
+    .intro-contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro {
+        width: 100%;
+    }
+
+    .logo-scratch {
+        width: 150px;
+    }
+}
+
+
+/* ===== GALERÍA DE ANIMACIONES ===== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+/* TARJETAS DE SCRATCH */
+.scratch-card {
+    background: #ffffff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+
+    border: 3px solid #ffca28;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    transition: 
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.scratch-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* EFECTO HOVER 💛 */
+.scratch-card:hover {
+    transform: scale(1.06);
+    background: #ffecb3;
+    border-color: #c62828;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+}
+/* ====== FOOTER MEJORADO ====== */
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    padding: 25px 10px;
+
+    font-size: 18px;          /* Más grande */
+    font-weight: bold;        /* Más elegante */
+    color: #4a2c2a;           /* Guinda oscuro */
+
+    background: linear-gradient(90deg, #ffe082, #ffca28);
+    border-top: 5px solid #c62828;
+
+    box-shadow: 0px -4px 12px rgba(0,0,0,0.2);
+    border-radius: 12px 12px 0 0;  /* Curvatura bonita */
+    letter-spacing: 0.5px;         /* Mejor lectura */
+}
+
+/* Efecto suave al pasar el cursor */
+footer:hover {
+    background: linear-gradient(90deg, #ffca28, #ffd54f);
+    transform: scale(1.01);
+    transition: all .3s ease;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Historietas – EST 33</title>
+
+    <!-- Estilos generales (tu styles.css ya existente) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Estilos específicos para historietas -->
+    <link rel="stylesheet" href="styles-historietas.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="imagenes/logoCompleto.gif">
+</head>
+<body>
+
+<!-- HEADER (igual estilo que index) -->
+<header class="header-logo">
+    <div class="header-text">
+        <h1>"Emotions That Unite Us"</h1>
+        <h1>Historietas: Emociones en Viñetas</h1>
+        <p>Historietas creadas por alumnos para expresar y aprender sobre emociones.</p>
+    </div>
+
+    <img src="imagenes/logoEmotions.png" alt="Logo EST 33" class="logo-header">
+</header>
+
+<!-- MENÚ (igual que en index) -->
+<nav class="menu">
+
+    <div class="item">
+        <a href="index.html">🏠 Inicio</a>
+    </div>
+
+    <div class="item">
+        <a href="emociones.html">😊 Emociones y cuestionario</a>
+    </div>
+
+    <div class="item">
+        <a href="capsulas.html">🎤 Cápsulas y mural motivacional</a>
+    </div>
+
+    <div class="item">
+        <a href="folleto.html">📄 Folleto digital bilingüe</a>
+    </div>
+
+    <div class="item">
+        <a href="scratch.html">💻 Animaciones sobre emociones (Scratch)</a>
+    </div>
+
+    <div class="item">
+        <a href="historietas.html">📚 Historietas</a>
+    </div>
+
+    <div class="item">
+        <a href="nosotros.html">👥 Acerca de nosotros</a>
+    </div>
+
+</nav>
+
+<!-- INTRO -->
+<section class="intro-historietas">
+    <h2>¿Qué encontrarás en esta sección?</h2>
+    <p>
+        Cinco historietas hechas por alumnos (fotografiadas por escena). Cada historieta tiene su
+        título, breve descripción y un visor para pasar las páginas/escenas.
+        Al llegar a la última imagen aparecerá un mensaje: <strong>“Fin de la historieta”</strong>.
+    </p>
+</section>
+
+<!-- CONTENEDOR PRINCIPAL -->
+<main class="contenedor-historietas">
+
+    <!-- HISTORIETA 1 -->
+    <section class="historieta">
+        <h3>1. Coco y Zuzu, un lugar para Zuzu</h3>
+        <p class="descripcion">Todos somos iguales sin importar nada.</p>
+
+        <div class="viewer" data-folder="historieta1" data-max="4">
+            <img src="imagenes/historieta1/1.jpeg" alt="Historieta 1 - página 1">
+            <div class="controles">
+                <button class="btnAnterior">⟨ Anterior</button>
+                <button class="btnSiguiente">Siguiente ⟩</button>
+            </div>
+            <p class="indicador"></p>
+        </div>
+    </section>
+
+    <!-- HISTORIETA 2 -->
+    <section class="historieta">
+        <h3>2. No puedo cambiar el cielo, pero si puedo elegir como sentir</h3>
+        <p class="descripcion">Una historia sobre como la ayuda de otra persona puede ayudar en lo emocional.</p>
+
+        <div class="viewer" data-folder="historieta2" data-max="6">
+            <img src="imagenes/historieta2/1.jpeg" alt="Historieta 2 - página 1">
+            <div class="controles">
+                <button class="btnAnterior">⟨ Anterior</button>
+                <button class="btnSiguiente">Siguiente ⟩</button>
+            </div>
+            <p class="indicador"></p>
+        </div>
+    </section>
+
+    <!-- HISTORIETA 3 -->
+    <section class="historieta">
+        <h3>3. Tiritón y el fantasma que no sabía asustar</h3>
+        <p class="descripcion">Historia sobre como el miedo a veces solo esta en la mente.</p>
+
+        <div class="viewer" data-folder="historieta3" data-max="4">
+            <img src="imagenes/historieta3/1.jpeg" alt="Historieta 3 - página 1">
+            <div class="controles">
+                <button class="btnAnterior">⟨ Anterior</button>
+                <button class="btnSiguiente">Siguiente ⟩</button>
+            </div>
+            <p class="indicador"></p>
+        </div>
+    </section>
+
+    <!-- HISTORIETA 4 -->
+    <section class="historieta">
+        <h3>4. Una cascara dura</h3>
+        <p class="descripcion">A veces nuestras inseguridad nos hacen pensar cosas equivocadas.</p>
+
+        <div class="viewer" data-folder="historieta4" data-max="5">
+            <img src="imagenes/historieta4/1.jpeg" alt="Historieta 4 - página 1">
+            <div class="controles">
+                <button class="btnAnterior">⟨ Anterior</button>
+                <button class="btnSiguiente">Siguiente ⟩</button>
+            </div>
+            <p class="indicador"></p>
+        </div>
+    </section>
+
+    <!-- HISTORIETA 5 -->
+    <section class="historieta">
+        <h3>5. Emocionalandia</h3>
+        <p class="descripcion">El mundo de las emociones.</p>
+
+        <div class="viewer" data-folder="historieta5" data-max="9">
+            <img src="imagenes/historieta5/1.jpeg" alt="Historieta 5 - página 1">
+            <div class="controles">
+                <button class="btnAnterior">⟨ Anterior</button>
+                <button class="btnSiguiente">Siguiente ⟩</button>
+            </div>
+            <p class="indicador"></p>
+        </div>
+
+        
+            <p class="indicador"></p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    Proyecto académico – EST 33 Guanaceví, Durango – 2026
+</footer>
+
+<!-- Script del carrusel -->
+<script>
+    const viewers = document.querySelectorAll(".viewer");
+
+    viewers.forEach(viewer => {
+        
+        let index = 1;
+        const folder = viewer.dataset.folder;
+        const max = parseInt(viewer.dataset.max);
+
+        const img = viewer.querySelector("img");
+        const indicador = viewer.querySelector(".indicador");
+        const btnNext = viewer.querySelector(".btnSiguiente");
+        const btnPrev = viewer.querySelector(".btnAnterior");
+
+        function mostrar() {
+            img.src = `imagenes/${folder}/${index}.jpeg`;
+            indicador.textContent =
+                (index === max)
+                ? "Fin de la historieta"
+                : `Página ${index} de ${max}`;
+        }
+
+        btnNext.onclick = () => {
+            if (index < max) {
+                index++;
+                mostrar();
+            }
+        };
+
+        btnPrev.onclick = () => {
+            if (index > 1) {
+                index--;
+                mostrar();
+            }
+        };
+
+        mostrar();
+    });
+</script>
+
+</body>
+</html>
