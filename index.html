@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Centro de Bienestar Emocional - EST 33</title>
+    
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="imagenes/logoCompleto.gif">
+    
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<body>
+
+    <header class="header-logo">
+        <div class="header-text">
+            <h1>"Emotions That Unite Us"</h1>
+            <h1>Centro de Bienestar Emocional - EST 33</h1>
+            <p>Un espacio seguro para aprender, expresarte y fortalecer tu bienestar</p>
+        </div>
+    
+        <img src="imagenes/logoEmotions.png" alt="Logo EST 33" class="logo-header">
+    </header>
+
+<!-- MENÚ PRINCIPAL ABAJO DEL HEADER -->
+<nav class="menu">
+
+    <div class="item">
+        <a href="index.html">🏠 Inicio</a>
+    </div>
+
+    <div class="item">
+        <a href="emociones.html">😊 Emociones y cuestionario</a>
+    </div>
+
+    <div class="item">
+        <a href="capsulas.html">🎤 Cápsulas y mural motivacional</a>
+    </div>
+
+    <div class="item">
+        <a href="folleto.html">📄 Folleto digital bilingüe</a>
+    </div>
+
+    <div class="item">
+        <a href="scratch.html">💻 Animaciones sobre emociones (Scratch)</a>
+    </div>
+
+    <div class="item">
+        <a href="historietas.html">📚 Historietas</a>
+    </div>
+
+    <div class="item">
+        <a href="nosotros.html">👥 Acerca de nosotros</a>
+    </div>
+
+</nav>
+
+
+<main>
+
+    <!-- Información principal -->
+    <section class="info">
+        <h2>Información del Proyecto</h2>
+
+        <h3>Propósito</h3>
+        <p>
+            El propósito de este proyecto es brindar a los estudiantes un 
+            espacio digital donde puedan aprender sobre las emociones, 
+            desarrollar habilidades socioemocionales, expresar cómo se 
+            sienten y recibir orientación positiva a través de recursos 
+            interactivos, actividades creativas y materiales educativos. 
+            Asimismo, se busca integrar el uso de la tecnología como 
+            herramienta educativa y social, mediante el desarrollo de una 
+            aplicación y una página web que apoyen el reconocimiento y manejo 
+            de las emociones. Con ello, se pretende favorecer el bienestar 
+            emocional de los alumnos y ofrecer recursos accesibles para la 
+            comunidad escolar, promoviendo una cultura de empatía, respeto y 
+            uso responsable de la tecnología.
+        </p>
+
+        <h3>Objetivos</h3>
+
+<div class="objetivos-carrusel">
+
+    <!-- LISTA DE OBJETIVOS (IZQUIERDA) -->
+    <ul class="lista-objetivos">
+        <li>Promover el reconocimiento y manejo adecuado de las emociones.</li>
+        <li>Fomentar el autocuidado, la empatía y la comunicación asertiva.</li>
+        <li>Brindar herramientas para apoyar el bienestar emocional de los estudiantes.</li>
+        <li>Integrar recursos digitales como Scratch, cápsulas informativas y historietas.</li>
+        <li>Ofrecer un cuestionario que permita identificar el estado emocional del alumno.</li>
+    </ul>
+
+    <!-- CARRUSEL (DERECHA) -->
+    <div class="carrusel">
+        <div class="carrusel-marco">
+            <img id="carruselImg" src="imagenes/index/1.jpg" alt="Imagen del carrusel">
+        </div>
+    </div>
+
+</div>
+
+
+        <h3>Descripción del Proyecto</h3>
+        <p>
+            Este proyecto integra una aplicación de emociones desarrollada en Java 
+            NetBeans con una página web interactiva que complementa el trabajo en el 
+            aula y extiende el aprendizaje a la comunidad escolar. La plataforma 
+            reúne material informativo sobre las emociones, cuestionarios de 
+            autoevaluación que brindan orientación, animaciones creadas en Scratch, 
+            historietas elaboradas por los alumnos, cápsulas motivacionales en español
+             e inglés y diversos recursos de apoyo.
+
+            El proyecto combina educación emocional y tecnología, permitiendo
+             a los estudiantes reconocer, expresar y reflexionar sobre sus 
+             emociones mientras desarrollan habilidades digitales. Su 
+             finalidad es funcionar como una herramienta integral de apoyo 
+             socioemocional, promoviendo el bienestar de los alumnos y el 
+             uso responsable de la tecnología con un sentido educativo y 
+             social.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    Proyecto académico – EST 33 Guanaceví, Durango – 2026
+</footer>
+<script>
+    const imagenes = [
+        "imagenes/index/1.jpg",
+        "imagenes/index/2.jpg",
+        "imagenes/index/3.jpg",
+        "imagenes/index/4.jpg",
+        "imagenes/index/5.jpg",
+        "imagenes/index/6.jpg"
+    ];
+    
+    let indexCarrusel = 0;
+    const imgCarrusel = document.getElementById("carruselImg");
+    
+    function cambiarCarrusel() {
+        indexCarrusel = (indexCarrusel + 1) % imagenes.length;
+        imgCarrusel.src = imagenes[indexCarrusel];
+    }
+    
+    setInterval(cambiarCarrusel, 5000);
+    </script>
+    
+</body>
+</html>
