@@ -1,0 +1,354 @@
+/* ====== ESTILOS GENERALES ====== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f8;
+    color: #333;
+}
+
+/* estilos específicos para folleto.html */
+
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: 20px auto 60px;
+    font-family: Arial, sans-serif;
+}
+
+/* ====== HEADER ====== */
+
+.header-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffca28;
+    padding: 25px;
+    color: #4a2c2a;
+    border-bottom: 4px solid #c62828;
+}
+
+.header-text { text-align: center; }
+
+.header-text h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.header-text p {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.logo-header {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+    border: 4px solid #ffc107;
+    padding: 4px;
+    background: white;
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+.logo-header:hover {
+    transform: scale(1.08);
+    border-color: #8b0000;
+}
+
+/* ====== MENÚ ====== */
+
+nav.menu {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #ffe082;
+    border-bottom: 4px solid #c62828;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+    animation: fadeSlide .5s ease-out;
+}
+
+@keyframes fadeSlide {
+    from { opacity:0; transform:translateY(-8px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* ====== BOTONES MENÚ ====== */
+
+.item {
+    background: white;
+    padding: 10px 14px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    transition: transform .25s, background .25s, box-shadow .25s, rotate .25s;
+}
+
+.item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@keyframes bounceLite {
+    0%{transform:scale(1);}
+    35%{transform:scale(1.08);}
+    100%{transform:scale(1.05);}
+}
+
+.item:hover {
+    animation: bounceLite .3s forwards;
+    background: #ffb74d;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    rotate: 1.5deg;
+}
+
+/* ===== Folleto PDF ===== */
+
+.folleto {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.folleto-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #4a63e7;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform .18s, background .18s;
+}
+
+.btn:hover { transform: translateY(-3px); background:#3248c7; }
+
+.btn.secondary {
+    background: transparent;
+    color:#4a63e7;
+    border:2px solid #4a63e7;
+}
+
+.btn.secondary:hover { background:#4a63e7; color:white; }
+
+.folleto-frame {
+    width:100%;
+    height:600px;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.folleto-frame iframe {
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+/* ===== FRASES ===== */
+
+.frases { margin:22px 0; }
+
+.grid-frases {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+}
+
+.frase {
+    background:linear-gradient(135deg,#fff8e1,#ffecb3);
+    border-radius:14px;
+    padding:20px 15px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.12);
+    text-align:center;
+    transition:transform .22s, box-shadow .22s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.frase:hover {
+    transform:translateY(-6px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.20);
+}
+
+.frase .icono { font-size:42px; margin-bottom:8px; }
+.frase .es { font-weight:700; color:#4a2c2a; font-size:17px; }
+.frase .en { font-size:14px; color:#333; }
+
+/* ===== INFOGRAFÍA ===== */
+
+.infografia-container { text-align:center; margin:40px auto; }
+
+.infografia-wrapper {
+    display:inline-block;
+    overflow:hidden;
+    border-radius:18px;
+    padding:10px;
+    background:linear-gradient(135deg,#ffc107,#ffb300);
+    border:6px double #800020;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.28);
+    transition:transform .25s, border-color .25s;
+}
+
+.infografia-wrapper:hover {
+    transform:scale(1.03);
+    border-color:#ffc107;
+}
+
+.infografia-container img {
+    width:100%;
+    max-width:950px;
+    height:auto;
+    display:block;
+    border-radius:12px;
+    transition:transform .45s ease;
+}
+
+.infografia-wrapper:hover img {
+    transform:scale(1.12);
+}
+
+/* ===== VIDEOS ===== */
+
+.videos { margin:22px 0; }
+
+.grid-videos {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.video-card {
+    background:#fff;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ffd89b;
+    box-shadow:0 6px 12px rgba(0,0,0,0.06);
+}
+
+.video-card h3 { margin:6px 0 10px; color:#8b0000; }
+
+.video-card video {
+    width:100%;
+    height:auto;
+    border-radius:8px;
+    border:2px solid #c62828;
+}
+
+.video-actions {
+    margin-top:8px;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.max-btn {
+    padding:8px 10px;
+    border-radius:8px;
+    border:none;
+    background:#4a63e7;
+    color:white;
+    cursor:pointer;
+}
+
+.max-btn:hover { background:#3248c7; transform:translateY(-3px); }
+
+/* ===== MODAL ===== */
+
+.modal {
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,0.6);
+    z-index:2000;
+}
+
+.modal.oculto { display:none; }
+
+.modal-content {
+    width:90%;
+    max-width:920px;
+    background:#000;
+    padding:12px;
+    border-radius:10px;
+    position:relative;
+}
+
+.modal-close {
+    position:absolute;
+    right:10px;
+    top:8px;
+    background:transparent;
+    color:white;
+    border:none;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* ===== RESPONSIVE EXTRA (AGREGADO) ===== */
+
+@media (max-width:768px){
+
+    .header-logo{
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+    }
+
+    .header-text h1{ font-size:24px; }
+    .header-text p{ font-size:16px; }
+    .logo-header{ width:90px; }
+
+    nav.menu{ flex-wrap:wrap; gap:6px; }
+    .item a{ font-size:14px; }
+
+    .container{ width:95%; margin-top:120px; padding:10px; }
+
+    .folleto-frame{ height:420px; }
+
+    .infografia-container img{ max-width:100%; }
+
+    .grid-videos{ grid-template-columns:1fr; }
+    .grid-frases{ grid-template-columns:1fr; }
+
+    .modal-content{ width:95%; }
+
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    margin-top:50px;
+    text-align:center;
+    padding:25px 10px;
+    font-size:18px;
+    font-weight:bold;
+    color:#4a2c2a;
+    background:linear-gradient(90deg,#ffe082,#ffca28);
+    border-top:5px solid #c62828;
+    box-shadow:0px -4px 12px rgba(0,0,0,0.2);
+    border-radius:12px 12px 0 0;
+    letter-spacing:0.5px;
+}
+
+footer:hover {
+    background:linear-gradient(90deg,#ffca28,#ffd54f);
+    transform:scale(1.01);
+    transition:all .3s ease;
+}
